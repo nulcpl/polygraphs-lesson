@@ -1,70 +1,108 @@
-# Introducing PolyGraphs: Running Philosophical Simulations and Analyzing Synthetic Data
+# PolyGraphs: Running Simulations and Analysing Synthetic Data
 
-A two-part lesson on using the [PolyGraphs](https://github.com/alexandroskoliousis/polygraphs) Python package to run philosophical simulations and analyze the synthetic data they generate, so as to better understand social processes of knowledge production.
+This two-part lesson introduces [PolyGraphs](https://github.com/alexandroskoliousis/polygraphs), a Python package for studying how beliefs develop within communities.
 
-**Authors:** Brian Ball, David Freeborn, Federica Imbriale, Amil Mohanan and Nicolas Kuri Perez Villaman (Computational Philosophy Lab, Northeastern University London).
+PolyGraphs represents a community as a network of agents who gather evidence, communicate with one another, and update their beliefs. By changing the structure of the network, the reliability of its members, and other features of the model, we can study how these factors affect whether a community reaches the truth, falls into error, or fails to reach agreement.
+
+The lesson covers both sides of this process: running simulations and analysing the data they produce.
+
+**Authors:** Brian Ball, David Freeborn, Federica Imbriale, Amil Mohanan and Nicolas Kuri Perez Villaman, Computational Philosophy Lab, Northeastern University London.
 
 [![Lesson DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22727305.svg)](https://doi.org/10.5281/zenodo.22727305)
 [![Dataset DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22726906.svg)](https://doi.org/10.5281/zenodo.22726906)
 
-## Contents
+## The lesson
 
-- [Part 1: Running Simulations](part-1-running-simulations.md) introduces key concepts of network theory and social epistemology, and shows how to install PolyGraphs, run simulations, edit configuration files, and import your own graph datasets.
-- [Part 2: Analyzing Synthetic Data](part-2-analyzing-data.md) shows how to load PolyGraphs output into a pandas dataframe, visualize graphs and the evolution of opinion over time, and extend the built-in `Processor` class to analyze a case study on mis- and disinformation.
-- `images/` holds the figures used in both parts.
+**[Part 1: Running Simulations](part-1-running-simulations.md)** introduces the basic ideas behind PolyGraphs and shows you how to install the software and run your own simulations. It covers network structure, configuration files, and importing graph datasets.
 
-## How this lesson and its data are archived
+**[Part 2: Analysing Synthetic Data](part-2-analyzing-data.md)** turns to the results. You will load PolyGraphs output into pandas, visualise networks and changing beliefs, and work through a case study on misinformation and disinformation. The final sections show how to extend PolyGraphs' `Processor` class for your own analyses.
 
-This lesson lives in two places, each with its own permanent DOI on [Zenodo](https://zenodo.org):
+The `images/` directory contains the figures used in both parts.
 
-| What | Where | DOI |
-|---|---|---|
-| Lesson text, figures and code snippets (this repository) | GitHub, archived automatically on Zenodo at each release | https://doi.org/10.5281/zenodo.22727305 |
-| Dataset `cleaned_data_v3_pt.tar.gz` used in Part 2 (about 2 GB) | Zenodo only. It is too large for GitHub | https://doi.org/10.5281/zenodo.22726906 |
+## Dataset
 
-The lesson DOI above is a *concept* DOI: it always resolves to the latest released version of this repository, and each GitHub release also receives its own version-specific DOI on Zenodo. Cite the concept DOI unless you need to refer to a particular version.
+Part 2 uses a dataset of PolyGraphs simulations produced for the misinformation case study. The simulations are entirely synthetic and contain no personal data.
 
-## Getting the dataset
+The compressed dataset is about 2 GB and is hosted separately on Zenodo:
 
-Part 2 of the lesson analyzes a cleaned dataset of PolyGraphs simulation output. To obtain it:
+https://doi.org/10.5281/zenodo.22726906
 
-1. Open the dataset record: https://doi.org/10.5281/zenodo.22726906
-2. Download `cleaned_data_v3_pt.tar.gz` (about 2 GB compressed; allow roughly 35 GB of free disk space for the unpacked data).
-3. Check the download is intact: its MD5 checksum should be `3e90cf71fd52146eb4e542c0e132b7ba` (also shown beside the file on the Zenodo record) and its size 1,994,345,823 bytes:
+Download `cleaned_data_v3_pt.tar.gz`. You will need roughly 35 GB of free disk space once the archive has been unpacked.
 
-   ```
-   md5sum cleaned_data_v3_pt.tar.gz        # Linux
-   md5 cleaned_data_v3_pt.tar.gz           # macOS
-   certutil -hashfile cleaned_data_v3_pt.tar.gz MD5   # Windows
-   ```
+You can verify the download against the MD5 checksum
 
-4. Unpack it. Part 2 explains where to put it and how to point the analysis code at it:
+`3e90cf71fd52146eb4e542c0e132b7ba`
 
-   ```
-   tar -xzf cleaned_data_v3_pt.tar.gz
-   ```
+and file size
 
-The data are entirely synthetic and contain no personal information. Dataset authors: Brian Ball, David Freeborn, Federica Imbriale and Amil Mohanan.
+`1,994,345,823 bytes`.
 
-## Software requirements
+On Linux:
 
-The lesson uses the `ptgraph` branch of PolyGraphs together with Python 3, Jupyter, numpy, pandas, matplotlib, networkx and seaborn. Installation is covered step by step in Part 1, including instructions for running in Google Colab.
+```bash
+md5sum cleaned_data_v3_pt.tar.gz
+```
 
-## Citing this lesson
+On macOS:
 
-Please cite this repository using the metadata in [CITATION.cff](CITATION.cff) (GitHub shows a ready-made citation under "Cite this repository"). Cite the dataset separately using its own DOI. Background reading on the PolyGraphs project:
+```bash
+md5 cleaned_data_v3_pt.tar.gz
+```
 
-- Ball, B., Koliousis, A., Mohanan, A., & Peacey, M. (2024). Computational philosophy: reflections on the PolyGraphs project. *Humanities and Social Sciences Communications*, 11(1), 1–9.
-- Ball, B., Koliousis, A., Mohanan, A., & Peacey, M. (2024). Misinformation and higher-order evidence. *Humanities and Social Sciences Communications*, 11(1), 1–12.
+On Windows:
 
-## License
+```powershell
+certutil -hashfile cleaned_data_v3_pt.tar.gz MD5
+```
 
-- Lesson text and figures: Creative Commons Attribution 4.0 International (CC BY 4.0)
-- Code snippets: MIT License
-- Dataset: CC BY 4.0 (stated on the Zenodo record)
+To unpack the archive:
+
+```bash
+tar -xzf cleaned_data_v3_pt.tar.gz
+```
+
+Part 2 explains where to place the resulting files and how to load them.
+
+Dataset authors: Brian Ball, David Freeborn, Federica Imbriale and Amil Mohanan.
+
+## Software
+
+The lesson uses the `ptgraph` branch of PolyGraphs with Python 3 and Jupyter. The analysis also uses:
+
+* numpy
+* pandas
+* matplotlib
+* networkx
+* seaborn
+
+Part 1 covers installation from scratch, including an option for running PolyGraphs in Google Colab.
+
+## Archive and citation
+
+The lesson and dataset have separate permanent records on [Zenodo](https://zenodo.org/).
+
+| Material                      | Location                                 | DOI                                     |
+| ----------------------------- | ---------------------------------------- | --------------------------------------- |
+| Lesson text, figures and code | GitHub, with releases archived on Zenodo | https://doi.org/10.5281/zenodo.22727305 |
+| Dataset used in Part 2        | Zenodo                                   | https://doi.org/10.5281/zenodo.22726906 |
+
+The lesson DOI is a *concept DOI*: it resolves to the latest archived release. Individual releases also receive version-specific DOIs. Use the concept DOI when citing the lesson as a whole, and a version-specific DOI when the exact version matters.
+
+GitHub can generate a formatted citation from the metadata in [CITATION.cff](CITATION.cff). Please cite the dataset separately if you use it.
+
+For background on PolyGraphs and the research behind the lesson, see:
+
+* Ball, B., Koliousis, A., Mohanan, A., & Peacey, M. (2024). “Computational philosophy: reflections on the PolyGraphs project.” *Humanities and Social Sciences Communications*, 11(1), 1–9.
+* Ball, B., Koliousis, A., Mohanan, A., & Peacey, M. (2024). “Misinformation and higher-order evidence.” *Humanities and Social Sciences Communications*, 11(1), 1–12.
+
+## Licence
+
+* Lesson text and figures: Creative Commons Attribution 4.0 International (CC BY 4.0)
+* Code snippets: MIT License
+* Dataset: CC BY 4.0
 
 See [LICENSE](LICENSE) for details.
 
-## For maintainers
+## Maintaining the repository
 
-The steps for depositing the dataset, enabling the Zenodo archive of this repository, and filling in the DOIs are in [RELEASING.md](RELEASING.md).
+Instructions for publishing releases and archiving them on Zenodo are in [RELEASING.md](RELEASING.md).
