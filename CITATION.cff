@@ -22,7 +22,7 @@ authors:
   - family-names: Kuri Perez Villaman
     given-names: Nicolas
     affiliation: "Northeastern University London"
-version: 1.0.1
+version: 1.0.2
 date-released: 2026-09-12
 license: CC-BY-4.0
 repository-code: "https://github.com/nulcpl/polygraphs-lesson"
