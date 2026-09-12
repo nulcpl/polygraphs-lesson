@@ -1,0 +1,19 @@
+{
+  "title": "Introducing PolyGraphs: Running Philosophical Simulations and Analyzing Synthetic Data",
+  "upload_type": "lesson",
+  "description": "A two-part lesson on using the PolyGraphs Python package to run philosophical simulations (part 1) and analyze the synthetic data they generate (part 2), so as to better understand social processes of knowledge production. Part 2 uses a companion dataset of simulation output, cleaned_data_v3_pt.tar.gz, archived separately on Zenodo. Developed at the Computational Philosophy Lab, Northeastern University London.",
+  "creators": [
+    {"name": "Ball, Brian", "affiliation": "Northeastern University London", "orcid": "0000-0003-2478-6151"},
+    {"name": "Freeborn, David", "affiliation": "Northeastern University London", "orcid": "0000-0002-2117-8145"},
+    {"name": "Imbriale, Federica", "affiliation": "Northeastern University London", "orcid": "0009-0009-2713-4547"},
+    {"name": "Mohanan, Amil", "affiliation": "Northeastern University London", "orcid": "0000-0001-8408-7198"},
+    {"name": "Kuri Perez Villaman, Nicolas", "affiliation": "Northeastern University London"}
+  ],
+  "license": "CC-BY-4.0",
+  "access_right": "open",
+  "keywords": ["PolyGraphs", "agent-based modelling", "social epistemology", "network science", "computational philosophy", "misinformation", "digital humanities"],
+  "related_identifiers": [
+    {"identifier": "10.5281/zenodo.ZENODO-DATASET-DOI", "relation": "isSupplementedBy", "resource_type": "dataset", "scheme": "doi"},
+    {"identifier": "https://github.com/alexandroskoliousis/polygraphs", "relation": "requires", "resource_type": "software", "scheme": "url"}
+  ]
+}

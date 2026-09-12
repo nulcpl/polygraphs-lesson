@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: "If you use this lesson, please cite it as below."
+title: "Introducing PolyGraphs: Running Philosophical Simulations and Analyzing Synthetic Data"
+type: software
+authors:
+  - family-names: Ball
+    given-names: Brian
+    orcid: "https://orcid.org/0000-0003-2478-6151"
+    affiliation: "Northeastern University London"
+  - family-names: Freeborn
+    given-names: David
+    orcid: "https://orcid.org/0000-0002-2117-8145"
+    affiliation: "Northeastern University London"
+  - family-names: Imbriale
+    given-names: Federica
+    orcid: "https://orcid.org/0009-0009-2713-4547"
+    affiliation: "Northeastern University London"
+  - family-names: Mohanan
+    given-names: Amil
+    orcid: "https://orcid.org/0000-0001-8408-7198"
+    affiliation: "Northeastern University London"
+  - family-names: Kuri Perez Villaman
+    given-names: Nicolas
+    affiliation: "Northeastern University London"
+version: 1.0.0
+date-released: 2026-09-12
+license: CC-BY-4.0
+repository-code: "https://github.com/nulcpl/polygraphs-lesson"
+# doi: 10.5281/zenodo.ZENODO-LESSON-DOI   # uncomment once the concept DOI exists (see RELEASING.md step 5)
+keywords:
+  - PolyGraphs
+  - agent-based modelling
+  - social epistemology
+  - network science
+  - computational philosophy
+  - misinformation
