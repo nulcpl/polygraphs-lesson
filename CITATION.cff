@@ -22,11 +22,11 @@ authors:
   - family-names: Kuri Perez Villaman
     given-names: Nicolas
     affiliation: "Northeastern University London"
-version: 1.0.0
+version: 1.0.1
 date-released: 2026-09-12
 license: CC-BY-4.0
 repository-code: "https://github.com/nulcpl/polygraphs-lesson"
-# doi: 10.5281/zenodo.ZENODO-LESSON-DOI   # uncomment once the concept DOI exists (see RELEASING.md step 5)
+doi: 10.5281/zenodo.22727305
 keywords:
   - PolyGraphs
   - agent-based modelling
