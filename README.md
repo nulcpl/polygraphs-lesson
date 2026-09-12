@@ -5,7 +5,7 @@ A two-part lesson on using the [PolyGraphs](https://github.com/alexandroskolious
 **Authors:** Brian Ball, David Freeborn, Federica Imbriale, Amil Mohanan and Nicolas Kuri Perez Villaman (Computational Philosophy Lab, Northeastern University London).
 
 [![Lesson DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.ZENODO-LESSON-DOI.svg)](https://doi.org/10.5281/zenodo.ZENODO-LESSON-DOI)
-[![Dataset DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.ZENODO-DATASET-DOI.svg)](https://doi.org/10.5281/zenodo.ZENODO-DATASET-DOI)
+[![Dataset DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22726906.svg)](https://doi.org/10.5281/zenodo.22726906)
 
 ## Contents
 
@@ -20,7 +20,7 @@ This lesson lives in two places, each with its own permanent DOI on [Zenodo](htt
 | What | Where | DOI |
 |---|---|---|
 | Lesson text, figures and code snippets (this repository) | GitHub, archived automatically on Zenodo at each release | https://doi.org/10.5281/zenodo.ZENODO-LESSON-DOI |
-| Dataset `cleaned_data_v3_pt.tar.gz` used in Part 2 (about 2 GB) | Zenodo only. It is too large for GitHub | https://doi.org/10.5281/zenodo.ZENODO-DATASET-DOI |
+| Dataset `cleaned_data_v3_pt.tar.gz` used in Part 2 (about 2 GB) | Zenodo only. It is too large for GitHub | https://doi.org/10.5281/zenodo.22726906 |
 
 The lesson DOI above is a *concept* DOI: it always resolves to the latest released version of this repository, and each GitHub release also receives its own version-specific DOI on Zenodo. Cite the concept DOI unless you need to refer to a particular version.
 
@@ -28,9 +28,9 @@ The lesson DOI above is a *concept* DOI: it always resolves to the latest releas
 
 Part 2 of the lesson analyzes a cleaned dataset of PolyGraphs simulation output. To obtain it:
 
-1. Open the dataset record: https://doi.org/10.5281/zenodo.ZENODO-DATASET-DOI
+1. Open the dataset record: https://doi.org/10.5281/zenodo.22726906
 2. Download `cleaned_data_v3_pt.tar.gz` (about 2 GB compressed; allow roughly 35 GB of free disk space for the unpacked data).
-3. Check the download is intact by comparing its MD5 checksum with the one shown beside the file on the Zenodo record:
+3. Check the download is intact: its MD5 checksum should be `3e90cf71fd52146eb4e542c0e132b7ba` (also shown beside the file on the Zenodo record) and its size 1,994,345,823 bytes:
 
    ```
    md5sum cleaned_data_v3_pt.tar.gz        # Linux

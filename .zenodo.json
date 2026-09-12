@@ -13,7 +13,7 @@
   "access_right": "open",
   "keywords": ["PolyGraphs", "agent-based modelling", "social epistemology", "network science", "computational philosophy", "misinformation", "digital humanities"],
   "related_identifiers": [
-    {"identifier": "10.5281/zenodo.ZENODO-DATASET-DOI", "relation": "isSupplementedBy", "resource_type": "dataset", "scheme": "doi"},
+    {"identifier": "10.5281/zenodo.22726906", "relation": "isSupplementedBy", "resource_type": "dataset", "scheme": "doi"},
     {"identifier": "https://github.com/alexandroskoliousis/polygraphs", "relation": "requires", "resource_type": "software", "scheme": "url"}
   ]
 }
