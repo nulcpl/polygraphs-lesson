@@ -481,13 +481,7 @@ Figure 13 shows a more surprising association: simulations with higher mean degr
 
 *Figure 13. Boxplots for each quartile of mean degree centrality for the top four unreliable nodes, for each operation in our dataset, on random graphs.*
 
-We should be cautious about that interpretation. In a more densely connected network, reliable and unreliable agents generally both have more connections. Earlier, we saw that denser random networks tended to have lower recorded step counts. The apparent benefit associated with highly connected unreliable agents may therefore reflect the greater connectivity of the network as a whole, rather than any benefit from unreliable agents occupying especially influential positions.
-
-Network density is therefore a potential confounding factor. The comparison above does not hold density constant, so it cannot distinguish the effect of greater overall connectivity from the effect of placing unreliable agents in highly connected positions.
-
-We could investigate this by repeating the comparison among networks of the same kind and size, with similar density, keeping the simulation operation and number of unreliable agents fixed. If the association weakens or disappears, that would support the confounding explanation. A more direct test would run repeated simulations on the same network, changing which agents are unreliable while keeping their number fixed. Comparing high-degree, low-degree, and random placements would help distinguish the effects of unreliable agents' positions from those of overall network connectivity.
-
-This illustrates a general lesson about simulation analysis: finding a pattern and explaining it are different tasks.
+We suspect there are many more such findings to be uncovered in this dataset, and in others you might generate, using the kinds of techniques we have outlined. Happy explorations!
 
 ### Statistical Testing
 
