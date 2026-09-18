@@ -77,32 +77,47 @@ In this section, we will briefly discuss installation, before turning to the tas
 
 To install PolyGraphs (locally) on your own machine,[^16] or (remotely) on a high performance computing (HPC) cluster,[^17] you will need to use the command line to create a virtual environment that contains it.[^18] As indicated above, we will do this using the source code manager, Git, as well as the package installer for Python, pip.
 
-Instructions are slightly different for macs and machines running Linux, on the one hand, and for those running Windows on the other. Nevertheless, in each case, you will want to open the terminal, and use the command line to navigate to the directory in which you would like to install PolyGraphs, then run each of the instructions below, one at a time.
+Instructions are slightly different for macOS and machines running Linux, on the one hand, and for those running Windows on the other. Nevertheless, in each case, you will want to open the terminal, and use the command line to navigate to the directory in which you would like to install PolyGraphs, then run each of the instructions below, one at a time.
 
-``` 
+```
 git clone https://github.com/alexandroskoliousis/polygraphs.git
 cd polygraphs
+python --version
+```
+
+PolyGraphs currently requires Python 3.12 or later. If this command reports an earlier version, install a current version of Python before continuing.
+
+Then create the virtual environment:
+
+```bash
 python -m venv .venv
 ```
 
-This uses git to copy the PolyGraphs source code, then navigates to the polygraphs directory created by doing so, and finally begins to create your PolyGraphs virtual environment.
+This uses git to copy the PolyGraphs source code, navigates to the polygraphs directory created by doing so, checks your Python version, and then creates your PolyGraphs virtual environment.
 
 The next step is to activate that environment. It differs, depending on your operating system. For Linux/macOS, the command is:
 
-```
+```bash
 source .venv/bin/activate
 ```
 
-By contrast, those on Windows should run:
+On Windows Command Prompt, run:
 
+```bat
+.venv\Scripts\activate.bat
 ```
-.venv\Scripts\activate
+
+On Windows PowerShell, run:
+
+```powershell
+.\.venv\Scripts\Activate.ps1
 ```
 
 Thereafter, all users should execute the following, one command at a time:
 
 ```
 git switch ptgraph
+git checkout 3371ab323ae585bcff25296f0e45ba6cbf3895b4
 pip install -e .
 pip install jupyter
 pip install seaborn
@@ -112,7 +127,7 @@ This ensures that your environment employs the correct version of the PolyGraphs
 
 ### Running Simulations
 
-PolyGraphs should now be installed, and your virtual environment should be activated (meaning that commands you run will be executed in the appropriate directory within your machine, and draw on the correct versions of the code you have installed). (If you are returning to this after a pause, you may need to open the command line, navigate to the polygraphs folder, and then run the relevant command above to 'activate' this environment once again.) Thus puts you in a position to use the software to run simulations in social epistemology!
+PolyGraphs should now be installed, and your virtual environment should be activated (meaning that commands you run will be executed in the appropriate directory within your machine, and draw on the correct versions of the code you have installed). (If you are returning to this after a pause, you may need to open the command line, navigate to the polygraphs folder, and then run the relevant command above to 'activate' this environment once again.) This puts you in a position to use the software to run simulations in social epistemology!
 
 #### Running the Test
 
@@ -134,7 +149,7 @@ We can see here that we have run five simulations ('Sim #0005') and then printed
 
 We can also see, for each simulation: how many steps it ran for and how many seconds it took; that in each case action B was chosen in the end; that the result of the simulation was not undefined (the value here is 0, not 1); and that it converged, and was not polarized. 
 
-Finally, we can see that, as each simulation runs, we get a readout out, at the first and last steps, and at every 100 steps in between, of how many thousands simulations steps are being completed every second, as well as what fraction of the nodes believe in taking action A vs B.
+Finally, we can see that, as each simulation runs, we get a readout, at the first and last steps, and at every 100 steps in between, of how many thousands of simulation steps are being completed every second, as well as what fraction of the nodes believe in taking action A vs B.
 
 Having run this test, you should also be able to verify that a new directory called 'polygraphs-cache' has been created (outside of the 'polygraphs' folder), itself containing a 'results' sub-directory with a further sub-directory within it named for the current date. Inside that folder will be (further folders containing) all of the output data from simulations run on the date in question. In particular, (within the only such folder that exists at present) you should see:
 * a .json file that records the settings of the various parameters used in these simulations
@@ -157,7 +172,7 @@ We can see that network.kind is set to "complete": this means that all the nodes
 
 Crucially, which operation, or 'op', the simulation runs is a parameter in PolyGraphs which specifies how the agents in the model behave. In test.yaml the value of this parameter is (the string) 'BalaGoyalOp'. This tells us that agents communicate their observations competently and honestly, so that their reports are true (even if they turn out, by chance, to be misleading). It also tells us agents trust the information they receive from (themselves and) their neighbours. In part 2 of this lesson, we will analyze data from simulations run using different operations (which, as with certain network kinds, will require us to specify values for additional parameters, depending on the model).
 
-There are, of course, other parameters whose values are specified in 'test.yaml'. Some of these (like init.kind) tell us how things are to be within a given simulation (in this case, the value is 'uniform', meaning that the intial beliefs of the agents in the model are to be chosen with an equal probability of falling anywhere in the [0-1] interval); others (like simulation.repeats) tell us how the computational job PolyGraphs is to do will be governed (in this case telling us that 5 simulations will be run, as we saw in the printout above - and not 10 as specified in the comment text). You can learn about the effects of these various parameters by experimenting, and/or reading the academic literature that uses these models; and if all else fails, you can reach out to the authors and ask! 
+There are, of course, other parameters whose values are specified in 'test.yaml'. Some of these (like init.kind) tell us how things are to be within a given simulation (in this case, the value is 'uniform', meaning that the initial beliefs of the agents in the model are to be chosen with an equal probability of falling anywhere in the [0-1] interval); others (like simulation.repeats) tell us how the computational job PolyGraphs is to do will be governed (in this case telling us that 5 simulations will be run, as we saw in the printout above - and not 10 as specified in the comment text). You can learn about the effects of these various parameters by experimenting, and/or reading the academic literature that uses these models; and if all else fails, you can reach out to the authors and ask!
 
 #### Loading Graph Datasets
 
@@ -193,21 +208,29 @@ In [part 2](part-2-analyzing-data.md), we will turn to the question of how to an
 [^11]: We can also impose a limit on the number of steps for which a simulation will run: we have chosen 100,000 steps in the data analyzed in part 2.
 [^12]: William J. Turkel and Adam Crymble, "Python Introduction and Installation," Programming Historian 1 (2012), https://doi.org/10.46430/phen0009.
 [^13]: Python is an object-oriented language. Object and class are therefore central notions. Classes are, in effect, ‘blueprints’ for constructing objects. These ‘blueprints’ can themselves be copied and rendered more specific through a mechanism known as inheritance. There is a nice explanation of object-oriented programming in Python, including class inheritance, available at https://www.w3schools.com/Python/python_oop.asp. 
-[^14]: Apple ships a version of [Git with Xcode Command Line Tools][8] which you can install with:
-```
-xcode-select --install
-Debian/Chromebooks
-sudo apt update
-sudo apt install git
-```
-See the [installation instructions for Linux][9] on the git website for other distributions.
-If you are working in Windows, download and install [Git for Windows][10]. This includes Git Bash, which add a bash shell for Windows. When it asks whether you would like to use a credential manager, select none. Otherwise, everything else should be the default option.
+[^14]: On macOS, Apple ships a version of [Git with Xcode Command Line Tools][8], which you can install with:
+
+    ```bash
+    xcode-select --install
+    ```
+
+    For Debian/Ubuntu systems, including the Linux environment available on many Chromebooks, run:
+
+    ```bash
+    sudo apt update
+    sudo apt install git
+    ```
+
+    See the [installation instructions for Linux][9] on the git website for other distributions.
+
+    If you are working in Windows, download and install [Git for Windows][10]. This includes Git Bash, which adds a Bash shell for Windows.
 [^15]: That said, you can run PolyGraphs simulations in e.g. Google Colab if you wish - see below.
-[^16]: Note that, if you are able to access the internet, and have a gmail account, it is possible to install and run the PolyGraphs code in Google colab. To do this, go to https://colab.google.com and open a new notebook (.ipynb file). You then need to run the following commands in the opening cell(s):
+[^16]: Note that, if you are able to access the internet, and have a Gmail account, it is possible to install and run the PolyGraphs code in Google Colab. To do this, go to https://colab.google.com and open a new notebook (.ipynb file). You then need to run the following commands in the opening cell(s):
 ```
 !git clone https://github.com/alexandroskoliousis/polygraphs.git
 %cd polygraphs
 !git switch ptgraph
+!git checkout 3371ab323ae585bcff25296f0e45ba6cbf3895b4
 !pip install -e .
 ```
 This should suffice to have the PolyGraphs source code available to you for use in Colab. If you have done this, you can skip ahead to Running the Test.

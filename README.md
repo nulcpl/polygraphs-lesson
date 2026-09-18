@@ -27,15 +27,15 @@ The compressed dataset is about 2 GB and is hosted separately on Zenodo:
 
 https://doi.org/10.5281/zenodo.22726906
 
-Download `cleaned_data_v3_pt.tar.gz`. You will need roughly 35 GB of free disk space once the archive has been unpacked.
+Download `cleaned_data_v3_pt.tar.gz`.
 
-You can verify the download against the MD5 checksum
+To check that the dataset downloaded correctly, open a terminal, or PowerShell on Windows, navigate to the folder containing `cleaned_data_v3_pt.tar.gz`, and run the appropriate command below. It will print an MD5 checksum. This should exactly match:
 
 `3e90cf71fd52146eb4e542c0e132b7ba`
 
-and file size
+If it does not match, the download may be incomplete or corrupted and you should download the file again.
 
-`1,994,345,823 bytes`.
+The downloaded file should also be `1,994,345,823 bytes`.
 
 On Linux:
 
@@ -55,11 +55,13 @@ On Windows:
 certutil -hashfile cleaned_data_v3_pt.tar.gz MD5
 ```
 
-To unpack the archive:
+From the same directory, unpack the archive with:
 
 ```bash
 tar -xzf cleaned_data_v3_pt.tar.gz
 ```
+
+This creates the extracted `cleaned_data_v3_pt` directory. Roughly 35 GB of free disk space is required.
 
 Part 2 explains where to place the resulting files and how to load them.
 
@@ -67,7 +69,7 @@ Dataset authors: Brian Ball, David Freeborn, Federica Imbriale and Amil Mohanan.
 
 ## Software
 
-The lesson uses the `ptgraph` branch of PolyGraphs with Python 3 and Jupyter. The analysis also uses:
+The lesson uses the `ptgraph` branch of PolyGraphs with Python 3.12 or later and Jupyter. The analysis also uses:
 
 * numpy
 * pandas
@@ -76,6 +78,8 @@ The lesson uses the `ptgraph` branch of PolyGraphs with Python 3 and Jupyter. Th
 * seaborn
 
 Part 1 covers installation from scratch, including an option for running PolyGraphs in Google Colab.
+
+See the [tested environment](TESTED_ENVIRONMENT.md) for the PolyGraphs revision and software versions used to test the released lesson.
 
 ## Archive and citation
 
